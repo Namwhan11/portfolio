@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 import { motion, useScroll, useTransform } from "motion/react";
 import { REDUCED, useMedia } from "@/lib/motion";
 
@@ -44,7 +45,7 @@ export default function BrowserFrame({ src, alt, exists, ratio = "16 / 10" }) {
             className="absolute inset-x-0 -inset-y-[6%]"
           >
             <Image
-              src={src}
+              src={asset(src)}
               alt={alt}
               fill
               sizes="(min-width: 1280px) 40vw, 90vw"

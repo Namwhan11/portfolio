@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 import { motion } from "motion/react";
 import { DUR, EASE, VIEW } from "@/lib/motion";
 
@@ -43,7 +44,7 @@ export default function AboutPhoto({ photo }) {
         className="relative overflow-hidden rounded-[4px] bg-panel"
       >
         <Image
-          src={photo.src}
+          src={asset(photo.src)}
           alt={photo.alt}
           width={740}
           height={962}
