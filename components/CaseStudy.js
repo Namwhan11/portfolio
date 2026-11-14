@@ -6,7 +6,11 @@ import { DUR, EASE, REDUCED, useMedia } from "@/lib/motion";
 
 // "Read the case study": expands the test strategy and the problems found.
 // Opens instantly when the visitor prefers reduced motion.
-export default function CaseStudy({ strategy, problems }) {
+export default function CaseStudy({
+  strategy,
+  problems,
+  problemsTitle = "Problems I found and fixed",
+}) {
   const [open, setOpen] = useState(false);
   const reduced = useMedia(REDUCED);
   const id = useId();
@@ -59,9 +63,7 @@ export default function CaseStudy({ strategy, problems }) {
             ))}
           </dl>
 
-          <h4 className="mt-10 font-display text-2xl">
-            Problems I found and fixed
-          </h4>
+          <h4 className="mt-10 font-display text-2xl">{problemsTitle}</h4>
           <ol className="mt-4 space-y-6">
             {problems.map((p, i) => (
               <li

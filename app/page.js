@@ -110,7 +110,11 @@ function Project({ p, flip }) {
           </a>
         )}
         {p.strategy && (
-          <CaseStudy strategy={p.strategy} problems={p.problems} />
+          <CaseStudy
+            strategy={p.strategy}
+            problems={p.problems}
+            problemsTitle={p.problemsTitle}
+          />
         )}
       </div>
     </article>

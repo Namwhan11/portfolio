@@ -4,6 +4,8 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { REDUCED, useMedia } from "@/lib/motion";
 import { Stagger, StaggerItem } from "./motion/Reveal";
+import TechChips from "./TechChips";
+import CaseStudy from "./CaseStudy";
 
 function Dot({ progress, at }) {
   const bg = useTransform(progress, [at, at + 0.06], ["#0d1321", "#52b69a"]);
@@ -70,6 +72,18 @@ export default function Timeline({ items }) {
                 </StaggerItem>
               ))}
             </Stagger>
+            {(e.tech || e.strategy) && (
+              <div className="max-w-3xl">
+                {e.tech && <TechChips tech={e.tech} />}
+                {e.strategy && (
+                  <CaseStudy
+                    strategy={e.strategy}
+                    problems={e.problems}
+                    problemsTitle={e.problemsTitle}
+                  />
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>

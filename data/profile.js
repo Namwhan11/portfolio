@@ -182,6 +182,54 @@ export const experience = {
   title: "Experience",
   items: [
     {
+      role: "QA Intern",
+      org: "Technical Water",
+      period: "Nov 2026 – Present",
+      points: [
+        "Tested the company website and its admin CMS — 114 test cases across public user, admin, security and non-functional checks",
+        "Tested a quotation (BOQ) system — 123 automated test cases covering login, user roles, documents, price/VAT calculation, master data and file attachments",
+        "Reported 15 bugs with steps to reproduce and screenshots; retested after the developers' fixes and confirmed all 6 website bugs fixed",
+        "Wrote a test report and a fix-tracking sheet in Excel for each system",
+        "Set up the QA workspace and Playwright test suite for a project management system",
+      ],
+      tech: "Playwright, TypeScript, Python, Excel, Chrome DevTools",
+      strategy: [
+        {
+          label: "Black-box",
+          tool: "manual exploration",
+          text: "No spec was available, so I explored each system and wrote test cases from its observed behaviour, split by user role.",
+        },
+        {
+          label: "Automation",
+          tool: "Playwright",
+          text: "Ran the cases in a real browser with a screenshot and timing for every case as evidence, plus a cross-browser run on Firefox, WebKit and a phone profile.",
+        },
+        {
+          label: "Roles & security",
+          tool: "Playwright + API requests",
+          text: "Checked that each user role can only do what it is allowed to, in both the UI and the API.",
+        },
+        {
+          label: "Reporting",
+          tool: "Excel",
+          text: "One report per system — summary, test cases per role, bug report with severity and steps to reproduce, and a fix-tracking sheet updated after each retest.",
+        },
+      ],
+      problemsTitle: "Challenges and how I handled them",
+      problems: [
+        {
+          problem:
+            "Testing ran against real data, so a test run must not change or delete anything that was already there.",
+          fix: "Blocked write requests inside the test suite where saving was not needed. Where it was, every test record was clearly labelled, settings were saved before the run and restored afterwards, and test records were cleaned up automatically.",
+        },
+        {
+          problem:
+            "Re-running a few tests wiped the screenshots from the full run.",
+          fix: "Gave reruns their own output folder and merged their results into the report instead of overwriting the full run.",
+        },
+      ],
+    },
+    {
       role: "Administrative Intern",
       org: "Office of the President, Rajabhat Maha Sarakham University",
       period: "Nov 2025 – Feb 2026",
